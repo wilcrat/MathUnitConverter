@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="inputValue">Enter length: </label>
+    <input type="text" id="inputValue" placeholder="0" />
+    <select name="" id="unitFrom">
+      <option value="meters">Meters</option>
+      <option value="feet">Feet</option>
+      <option value="inches">Inches</option>
+    </select>
+    <label for="unitTo">Convert to:</label>
+    <select name="" id="unitTo">
+      <option value="meters">Meters</option>
+      <option value="feet">Feet</option>
+      <option value="inches">Inches</option>
+    </select>
+    <button onclick="convertLength()">Convert</button>
+    <p id="result"></p>
+  </body>
+
+  <script>
+    function convertLength() {
+      const inputValue = parseFloat(
+        document.getElementById("inputValue").value
+      );
+      const unitFrom = document.getElementById("unitFrom").value;
+      const unitTo = document.getElementById("unitTo").value;
+      let result;
+
+      if (unitFrom == "meters" && unitTo == "feet") {
+        result = inputValue * 3.28084;
+      } else result = inputValue;
+    }
+
+    document.getElementById("result").textContent = result;
+  </script>
+</html>
