@@ -9,4 +9,6 @@ function convertLength() {
   } else result = inputValue;
 }
 
-document.getElementById("result").textContent = result;
+document.getElementById(
+  "result"
+).textContent = `${inputValue} ${unitFrom} is ${result.toFixed(2)} ${unitTo}`;
